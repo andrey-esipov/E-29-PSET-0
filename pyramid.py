@@ -17,14 +17,15 @@ def print_pyramid(rows):
 
     :param int rows: total height
     """
-    raise NotImplementedError("Called with rows={}".format(rows))
+    for r in range(rows):
+        print('-' * (rows - r - 1) + '=' * (2 * r + 1) + '-' * (rows - r - 1))
 
 
 if __name__ == "__main__":
     parser = ArgumentParser(
         description=__doc__, formatter_class=RawDescriptionHelpFormatter
     )
-    parser.add_argument("-r", "--rows", default=10, help="Number of rows")
+    parser.add_argument("-r", "--rows", default=3, help="Number of rows")
 
     args = parser.parse_args()
     print_pyramid(args.rows)
