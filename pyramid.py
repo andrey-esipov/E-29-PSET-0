@@ -25,7 +25,7 @@ if __name__ == "__main__":
     parser = ArgumentParser(
         description=__doc__, formatter_class=RawDescriptionHelpFormatter
     )
-    parser.add_argument("-r", "--rows", default=3, help="Number of rows")
+    parser.add_argument("-r", "--rows", default=10, help="Number of rows")
 
     args = parser.parse_args()
-    print_pyramid(args.rows)
+    print_pyramid(int(args.rows))
